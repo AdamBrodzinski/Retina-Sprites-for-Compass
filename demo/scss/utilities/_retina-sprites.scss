@@ -36,7 +36,6 @@
       background-position: sprite-position($sprites, $name_active, -$pad, -$pad);
     }
   }
-
   
   @if $pad > 0 {
     padding: $pad;
