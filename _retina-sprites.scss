@@ -55,24 +55,3 @@
     }
   }
 }
-
-
-
-$sprites: sprite-map("sprites/hdr/*.png");              // import 1x sprites
-$sprites2x: sprite-map("sprites-retina/hdr/*.png");     // import retina sprites
-
-
-
-.myRetTest {
-	@include sprite(hdr-logo, $hover: true);
-}
-
-.myLogo {
-  background: url(/images/sprites/hdr/hdr-logo.png);
-  height: 52px;
-  width: 108px;
-
-  &:hover {
-    background: url(/images/sprites/hdr/hdr-logo_hover.png);
-  }
-}
