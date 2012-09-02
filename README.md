@@ -33,11 +33,11 @@ In your SCSS file, declare where your sprites are located. In this example I hav
 Almost ready to rock and roll!! Create a class for your sprite, and use an include to generate it.
  
     .myHoverButton {
-	   @include sprite(hdr-logo, $hover: true);
+	   @include sprite(signIn, $hover: true);  // imports signIn.png and signIn_hover.png
     }
 
     .myBoringButton {
-       @include sprite(signIn);
+       @include sprite(signIn);  // imports signIn.png
     }
 
 
