@@ -1,0 +1,37 @@
+* { margin: 0; padding: 0;}    // for demo purposes, don't use in production!!
+body { padding: 100px; font-family: sans-serif; }       // for demo, not required
+h4 { margin: 35px 0 10px 0; color: #444;}
+
+/*  Styles above are for demo page, not required for spriting  */
+
+
+@import "utilities/retina-sprites";  // import this once for all sprites
+
+
+
+
+
+/* ======== In production, I would abstract all of the following into it's own SCSS file ======== */
+
+
+$sprites: sprite-map("sprites/buttons/*.png");              // import 1x sprites from buttons subfolder 
+$sprites2x: sprite-map("sprites-retina/buttons/*.png");     // import 2x sprites from buttons subfolder
+
+
+ // $sprites: sprite-map("sprites/buttons/*.png", $spacing: 40px);          // add padding to sprite sheet
+ // $sprites2x: sprite-map("sprites-retina/buttons/*.png", $spacing: 80px); // add padding to sprite sheet
+
+
+
+.myHoverButton {
+	@include sprite(signIn, $hover: true);
+}
+
+.myActiveButton {
+	@include sprite(signIn, $hover: true);
+}
+
+.myBoringButton {
+	@include sprite(signIn);
+}
+

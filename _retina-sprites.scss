@@ -1,0 +1,78 @@
+@import "compass/utilities/sprites";         // Include compass sprite helpers
+@import "compass/css3/background-size";      // Include helper to calc background size
+
+
+@mixin sprite($name, $hover: false) {
+  @include retina-sprite($name, $sprites, $sprites2x, $hover);
+}
+
+// The general purpose retina sprite mixin.
+  //
+  //    @include retina-sprite(name, $spritemap1, $spritemap2)
+  //    @include retina-sprite(name, $spritemap1, $spritemap2[, $dimensions: true, $pad: 0])
+  //
+  //    If `dimensions` is true, then width/height will also be set.
+  //
+  //    if `pad` is non-zero, then that's how much padding the element will have (requires
+  //    $spacing on the sprite maps). Great for iPhone interfaces to make hit areas bigger.
+  //
+@mixin retina-sprite($name, $sprites, $sprites2x, $hover, $dimensions: true, $pad: 0) {  
+  @if $dimensions == true {
+    @include sprite-dimensions($sprites, $name);
+  }
+  background-image: sprite-url($sprites);
+  background-position: sprite-position($sprites, $name, -$pad, -$pad);
+  background-repeat: no-repeat;
+
+  @if $hover == true {
+    $name_hover: $name + _hover;
+    &:hover {
+      background-position: sprite-position($sprites, $name_hover, -$pad, -$pad);
+   }
+}
+  
+  @if $pad > 0 {
+    padding: $pad;
+  }
+  
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5) {
+    & {
+      $pos: sprite-position($sprites2x, $name, -$pad * 2, -$pad * 2);
+      background-image: sprite-url($sprites2x);
+      background-position: nth($pos, 1) nth($pos, 2) / 2;
+      @include background-size(ceil(image-width(sprite-path($sprites2x)) / 2), auto);
+      //  sprite-path() returns the path of the generated sprite sheet, which
+      //  image-width() calculates the width of. the ceil() is in place in case
+      //  you have sprites that have an odd-number of pixels in width
+      
+      @if $hover == true {
+        $name_hover: $name + _hover;    // create myButton_hover and assign it
+        &:hover{
+          $pos: sprite-position($sprites2x, $name_hover, -$pad * 2, -$pad * 2);
+          background-position: nth($pos, 1) nth($pos, 2) / 2;
+        }
+      }
+    }
+  }
+}
+
+
+
+$sprites: sprite-map("sprites/hdr/*.png");              // import 1x sprites
+$sprites2x: sprite-map("sprites-retina/hdr/*.png");     // import retina sprites
+
+
+
+.myRetTest {
+	@include sprite(hdr-logo, $hover: true);
+}
+
+.myLogo {
+  background: url(/images/sprites/hdr/hdr-logo.png);
+  height: 52px;
+  width: 108px;
+
+  &:hover {
+    background: url(/images/sprites/hdr/hdr-logo_hover.png);
+  }
+}

@@ -1,26 +1,41 @@
 # Retina-Sprites-for-Compass
 ==========================
 
-A mixin for creating normal & retina sprites with hover &amp; active states.
+## A mixin to create retina sprites with hover & active states
 
+While building a new website, I came across the need to use compass sprites with hover states on normal and retina devices. Not being able to find anything that would suite my needs, I forked a gist from [this Gist](https://gist.github.com/2140082) and added hover & active parameters. Big thanks to @thulstrup and  @rstacruz !!
 
-### Creating Sprites
+I've provided a demo folder with working sample buttons.
 
-First declare what folders your sprites are located using the **$sprites** & **$sprites-retina** variables.
+I created a drop in utility mixin to allow compass to automatically create sprites for normal and retina devices, and also providing hover and active states.
 
-Then add in your sprites in by using @include sprite-background(a, b, c); Where *a* is the normal state, *b* is the hover state and *c* is the active state.
+### Features
 
-    .normalSprite {
-      @include sprite-background(myIcon);
+* Generate normal & Retina Sprites
+* Optional Hover & Active States
+* Optional Sprite Padding
+* Optional Width, Height Output
+
+<br>
+
+## Instructions
+
+Drop _retina-sprites.scss into your preferred location and link @include it into your main CSS file. I prefer to drop it into a utilities folder with other commonly used helpers.
+
+    @import "utilities/retina-sprites";
+
+Create two folders in your images folder. For my example I've created "sprites" for 1x sprites and "sprites-retina" for 2x sprites. In my example I've also created a subfolder called buttons to sprite these as a group. Drop your photo's in these folders, they should have the same file name.
+
+In your SCSS file, declare where your sprites are located. In this example I have my buttons in a separate scss file, and I place the following in the top of this file.
+
+    $sprites: sprite-map("sprites/buttons/*.png");            // import 1x sprites
+    $sprites2x: sprite-map("sprites-retina/buttons/*.png");   // import retina sprites
+
+Almost ready to rock and roll!! Create a class for your sprite, and use an include to generate it.
+ 
+    .myHoverButton {
+	  @include sprite(hdr-logo, $hover: true);
     }
-    
-    .flashySprite {
-      @include sprite-background(spriteTwo, spriteTwo_hover);
-    }
-    
-    .flashySprite {
-      @include sprite-background(mybutton, myButton_hover, myButton_active);
-    }
 
-
-Forked from https://gist.github.com/2140082
+## ** Note **
+Compass will output the sprite path as /images/sprites/blahblah.png so you will need to use a simple server to preview it (which you're probably doing anyhow).
