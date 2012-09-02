@@ -15,6 +15,36 @@ h4 {
 
 /*  Styles above are for demo page, not required for spriting  */
 /* ======== In production, I would abstract all of the following into it's own SCSS file ======== */
+.myHoverActiveButton {
+  height: 40px;
+  width: 174px;
+  background-image: url('/images/sprites/buttons-s35cad6a7fd.png');
+  background-position: 0 -40px;
+  background-repeat: no-repeat;
+}
+.myHoverActiveButton:hover {
+  background-position: 0 -80px;
+}
+.myHoverActiveButton:active {
+  background-position: 0 0;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5) {
+  .myHoverActiveButton {
+    background-image: url('/images/sprites-retina/buttons-s3b2494ec76.png');
+    background-position: 0 0;
+    -webkit-background-size: 174px, auto;
+    -moz-background-size: 174px, auto;
+    -o-background-size: 174px, auto;
+    background-size: 174px, auto;
+  }
+  .myHoverActiveButton:hover {
+    background-position: 0 -40px;
+  }
+  .myHoverActiveButton:active {
+    background-position: 0 -80px;
+  }
+}
+
 .myHoverButton {
   height: 40px;
   width: 174px;
@@ -46,8 +76,8 @@ h4 {
   background-position: 0 -40px;
   background-repeat: no-repeat;
 }
-.myActiveButton:hover {
-  background-position: 0 -80px;
+.myActiveButton:active {
+  background-position: 0 0;
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5) {
   .myActiveButton {
@@ -58,8 +88,8 @@ h4 {
     -o-background-size: 174px, auto;
     background-size: 174px, auto;
   }
-  .myActiveButton:hover {
-    background-position: 0 -40px;
+  .myActiveButton:active {
+    background-position: 0 -80px;
   }
 }
 

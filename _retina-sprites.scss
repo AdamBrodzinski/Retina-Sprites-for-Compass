@@ -2,8 +2,8 @@
 @import "compass/css3/background-size";      // Include helper to calc background size
 
 
-@mixin sprite($name, $hover: false) {
-  @include retina-sprite($name, $sprites, $sprites2x, $hover);
+@mixin sprite($name, $hover: false, $active: false) {
+  @include retina-sprite($name, $sprites, $sprites2x, $hover, $active);
 }
 
 // The general purpose retina sprite mixin.
@@ -16,7 +16,7 @@
   //    if `pad` is non-zero, then that's how much padding the element will have (requires
   //    $spacing on the sprite maps). Great for iPhone interfaces to make hit areas bigger.
   //
-@mixin retina-sprite($name, $sprites, $sprites2x, $hover, $dimensions: true, $pad: 0) {  
+@mixin retina-sprite($name, $sprites, $sprites2x, $hover, $active, $dimensions: true, $pad: 0) {  
   @if $dimensions == true {
     @include sprite-dimensions($sprites, $name);
   }
@@ -28,6 +28,12 @@
     $name_hover: $name + _hover;
     &:hover {
       background-position: sprite-position($sprites, $name_hover, -$pad, -$pad);
+   }
+
+   @if $active == true {
+    $name_active: $name + _active;
+    &:active {
+      background-position: sprite-position($sprites, $name_active, -$pad, -$pad);
    }
 }
   
