@@ -46,7 +46,7 @@
       $pos: sprite-position($sprites2x, $name, -$pad * 2, -$pad * 2);
       background-image: sprite-url($sprites2x);
       background-position: nth($pos, 1) nth($pos, 2) / 2;
-      @include background-size(ceil(image-width(sprite-path($sprites2x)) / 2), auto);
+      @include background-size(ceil(image-width(sprite-path($sprites2x)) / 2) auto);
       //  sprite-path() returns the path of the generated sprite sheet, which
       //  image-width() calculates the width of. the ceil() is in place in case
       //  you have sprites that have an odd-number of pixels in width
