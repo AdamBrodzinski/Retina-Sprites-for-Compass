@@ -23,18 +23,18 @@ $sprites2x: sprite-map("sprites-retina/buttons/*.png");     // import 2x sprites
 
 
 .myHoverActiveButton {
-	@include sprite(signIn, $hover: true, $active: true);
+	@include retina-sprite(signIn, $hover: true, $active: true);
 }
 
 .myHoverButton {
-	@include sprite(signIn, $hover: true);
+	@include retina-sprite(signIn, $hover: true);
 }
 
 .myActiveButton {
-	@include sprite(signIn, $active: true);
+	@include retina-sprite(signIn, $active: true);
 }
 
 .myBoringButton {
-	@include sprite(signIn);
+	@include retina-sprite(signIn);
 }
 

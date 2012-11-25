@@ -33,15 +33,15 @@ In your SCSS file, declare where your sprites are located. In this example I hav
 Almost ready to rock and roll!! Create a class for your sprite, and use an include to generate it.
  	
 	.myHoverActiveButton {
-		@include sprite(signIn, $hover: true, $active: true);    // imports signIn.png, signIn_hover.png, and signIn_active.png
+		@include retina-sprite(signIn, $hover: true, $active: true);    // imports signIn.png, signIn_hover.png, and signIn_active.png
 	}
 
     .myHoverButton {
-	   @include sprite(signIn, $hover: true);                    // imports signIn.png and signIn_hover.png
+	   @include retina-sprite(signIn, $hover: true);                    // imports signIn.png and signIn_hover.png
     }
 
     .myBoringButton {
-       @include sprite(signIn);                                  // imports signIn.png
+       @include retina-sprite(signIn);                                  // imports signIn.png
     }
 
 
