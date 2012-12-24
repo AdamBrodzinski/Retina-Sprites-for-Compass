@@ -29,6 +29,11 @@ In your SCSS file, declare where your sprites are located. In this example I hav
 
     $sprites: sprite-map("sprites/buttons/*.png");            // import 1x sprites
     $sprites2x: sprite-map("sprites-retina/buttons/*.png");   // import 2x sprites
+    
+If you would like to add padding to your sprites, use the spacing parameter and double the value for the retina version:
+
+    $sprites: sprite-map("sprites/buttons/*.png", $spacing: 10px);            // import 1x sprites, 10px padding
+    $sprites2x: sprite-map("sprites-retina/buttons/*.png", $spacing: 20px);   // import 2x sprites, 20px padding
 
 Almost ready to rock and roll!! Create a class for your sprite, and use an include to generate it.
  	
