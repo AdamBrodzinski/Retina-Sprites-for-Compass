@@ -18,7 +18,7 @@ h4 {
 .myHoverActiveButton {
   height: 40px;
   width: 174px;
-  background-image: url('/images/sprites/buttons-s35cad6a7fd.png');
+  background-image: url('../images/sprites/buttons-s35cad6a7fd.png');
   background-position: 0 -40px;
   background-repeat: no-repeat;
 }
@@ -28,14 +28,14 @@ h4 {
 .myHoverActiveButton:active {
   background-position: 0 0;
 }
-@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5) {
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5) {
   .myHoverActiveButton {
-    background-image: url('/images/sprites-retina/buttons-s3b2494ec76.png');
+    background-image: url('../images/sprites-retina/buttons-s3b2494ec76.png');
     background-position: 0 0;
-    -webkit-background-size: 174px, auto;
-    -moz-background-size: 174px, auto;
-    -o-background-size: 174px, auto;
-    background-size: 174px, auto;
+    -webkit-background-size: 174px auto;
+    -moz-background-size: 174px auto;
+    -o-background-size: 174px auto;
+    background-size: 174px auto;
   }
   .myHoverActiveButton:hover {
     background-position: 0 -40px;
@@ -48,21 +48,21 @@ h4 {
 .myHoverButton {
   height: 40px;
   width: 174px;
-  background-image: url('/images/sprites/buttons-s35cad6a7fd.png');
+  background-image: url('../images/sprites/buttons-s35cad6a7fd.png');
   background-position: 0 -40px;
   background-repeat: no-repeat;
 }
 .myHoverButton:hover {
   background-position: 0 -80px;
 }
-@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5) {
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5) {
   .myHoverButton {
-    background-image: url('/images/sprites-retina/buttons-s3b2494ec76.png');
+    background-image: url('../images/sprites-retina/buttons-s3b2494ec76.png');
     background-position: 0 0;
-    -webkit-background-size: 174px, auto;
-    -moz-background-size: 174px, auto;
-    -o-background-size: 174px, auto;
-    background-size: 174px, auto;
+    -webkit-background-size: 174px auto;
+    -moz-background-size: 174px auto;
+    -o-background-size: 174px auto;
+    background-size: 174px auto;
   }
   .myHoverButton:hover {
     background-position: 0 -40px;
@@ -72,21 +72,21 @@ h4 {
 .myActiveButton {
   height: 40px;
   width: 174px;
-  background-image: url('/images/sprites/buttons-s35cad6a7fd.png');
+  background-image: url('../images/sprites/buttons-s35cad6a7fd.png');
   background-position: 0 -40px;
   background-repeat: no-repeat;
 }
 .myActiveButton:active {
   background-position: 0 0;
 }
-@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5) {
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5) {
   .myActiveButton {
-    background-image: url('/images/sprites-retina/buttons-s3b2494ec76.png');
+    background-image: url('../images/sprites-retina/buttons-s3b2494ec76.png');
     background-position: 0 0;
-    -webkit-background-size: 174px, auto;
-    -moz-background-size: 174px, auto;
-    -o-background-size: 174px, auto;
-    background-size: 174px, auto;
+    -webkit-background-size: 174px auto;
+    -moz-background-size: 174px auto;
+    -o-background-size: 174px auto;
+    background-size: 174px auto;
   }
   .myActiveButton:active {
     background-position: 0 -80px;
@@ -96,17 +96,17 @@ h4 {
 .myBoringButton {
   height: 40px;
   width: 174px;
-  background-image: url('/images/sprites/buttons-s35cad6a7fd.png');
+  background-image: url('../images/sprites/buttons-s35cad6a7fd.png');
   background-position: 0 -40px;
   background-repeat: no-repeat;
 }
-@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5) {
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5) {
   .myBoringButton {
-    background-image: url('/images/sprites-retina/buttons-s3b2494ec76.png');
+    background-image: url('../images/sprites-retina/buttons-s3b2494ec76.png');
     background-position: 0 0;
-    -webkit-background-size: 174px, auto;
-    -moz-background-size: 174px, auto;
-    -o-background-size: 174px, auto;
-    background-size: 174px, auto;
+    -webkit-background-size: 174px auto;
+    -moz-background-size: 174px auto;
+    -o-background-size: 174px auto;
+    background-size: 174px auto;
   }
 }
