@@ -5,8 +5,6 @@
 
 While building [Tagit's website](http://playtagit.com), I came across the need to use compass sprites with hover states on normal and retina devices. Not being able to find anything that would suite my needs, I forked a gist from [this Gist](https://gist.github.com/2140082) and added hover & active parameters. Big thanks to [thulstrup](https://github.com/thulstrup) and  [rstacruz](https://github.com/rstacruz)!
 
-I've provided a demo folder with working sample buttons.
-
 I created a drop in utility mixin to allow compass to automatically create sprites for normal and retina devices, and also providing hover and active states.
 
 ### Features
@@ -15,7 +13,8 @@ I created a drop in utility mixin to allow compass to automatically create sprit
 * Optional Hover & Active States
 * Optional Sprite Spacing/Padding
 
-<br>
+
+I've provided a demo folder with working sample buttons.
 
 ## Instructions
 
@@ -48,7 +47,3 @@ Almost ready to rock and roll!! Create a class for your sprite, and use an inclu
     .myBoringButton {
        @include retina-sprite(signIn);                                  // imports signIn.png
     }
-
-
-## ** Note **
-Compass will output the sprite path as /images/sprites/foo.png so you will need to use a simple server to preview it. If you don't have one, checkout this simple `server` command works well. https://gist.github.com/1525217
