@@ -47,3 +47,5 @@ Almost ready to rock and roll!! Create a class for your sprite, and use an inclu
     .myBoringButton {
        @include retina-sprite(signIn);                                  // imports signIn.png
     }
+
+![analytics](http://gh-analytics.aws.af.cm/gh-retinaSprites.gif)
