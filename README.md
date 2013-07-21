@@ -22,7 +22,7 @@ Drop _retina-sprites.scss into your preferred location and link @include it into
 
     @import "utilities/retina-sprites";
 
-Create two folders in your images folder. For my example I've created "sprites" for 1x sprites and "sprites-retina" for 2x sprites. In my example I've also created a subfolder called buttons to sprite these as a group. Drop your photo's in these folders, they should have the same file name. **Also make sure the retina photo's are divisible by 4**. If they are not, it can lead to clipping and shifting.
+Create two folders in your images folder. For my example I've created "sprites" for 1x sprites and "sprites-retina" for 2x sprites. In my example I've also created a subfolder called buttons to sprite these as a group. Drop your photo's in these folders, they should have the same file name. **Also make sure the retina images are divisible by 4**. If they are not, it can lead to clipping and shifting.
 
 In your SCSS file, declare where your sprites are located. In this example I have my buttons in a separate scss file, and I place the following in the top of this file.
 
