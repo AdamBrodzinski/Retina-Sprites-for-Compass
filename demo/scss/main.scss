@@ -5,36 +5,56 @@ h4 { margin: 35px 0 10px 0; color: #444;}
 /*  Styles above are for demo page, not required for spriting  */
 
 
-@import "utilities/retina-sprites";  // import this once for all sprites
-
-
+@import "vendor/retina";  // import this once for all retina mixins
 
 
 
 /* ======== In production, I would abstract all of the following into it's own SCSS file ======== */
 
+// set this variable to 1 if you have to support IE8 and use respondjs 
+// this also requires Modernizr's check for 'mediaqueries'
+$retina-support-respondjs: 1; 
 
-$sprites: sprite-map("sprites/buttons/*.png");              // import 1x sprites from buttons subfolder 
-$sprites2x: sprite-map("sprites-retina/buttons/*.png");     // import 2x sprites from buttons subfolder
+// default spacing for all sprites is set to 2px
+// use this variable if you want to change it
+$retina-sprite-spacing: 10px;
+
+// the first sprite is used as default
+// so you don't have to pass the name to the `retina-sprite` mixin
+@include retina-sprite-add(icons, "sprites/icons/*.png", "sprites-retina/icons/*.png");
+@include retina-sprite-add(buttons, "sprites/buttons/*.png", "sprites-retina/buttons/*.png");
 
 
- // $sprites: sprite-map("sprites/buttons/*.png", $spacing: 40px);          // add padding to sprite sheet
- // $sprites2x: sprite-map("sprites-retina/buttons/*.png", $spacing: 80px); // add padding to sprite sheet
 
+
+
+
+.icon-compass-logo {
+  @include retina-sprite(compass-logo);
+}
 
 .myHoverActiveButton {
-	@include retina-sprite(signIn, $hover: true, $active: true);
+	@include retina-sprite(signIn, buttons, $hover: true, $active: true);
 }
 
 .myHoverButton {
-	@include retina-sprite(signIn, $hover: true);
+	@include retina-sprite(signIn, buttons, $hover: true);
 }
 
 .myActiveButton {
-	@include retina-sprite(signIn, $active: true);
+	@include retina-sprite(signIn, buttons, $active: true);
 }
 
 .myBoringButton {
-	@include retina-sprite(signIn);
+  @include retina-sprite(signIn, buttons);
+}
+
+.myOtherButton {
+  @include retina-background(arrow-right, center right no-repeat);
+
+  // for demo, not required
+  display: inline-block;
+  padding: 10px;
+  padding-right: 30px;
 }
 
