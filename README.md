@@ -2,7 +2,7 @@
 ==========================
 
 This is a fork of Adam Brodzinski's [Retina-Sprites-for-Compass](https://github.com/AdamBrodzinski/Retina-Sprites-for-Compass).  
-While using the mixin I made several changes to it which make it easier to use with multiple sprites and improve compilation time.  
+While using the mixin I made several changes to it, which make it easier to use multiple sprites and improve compilation time.  
 I've also added an improved version of [this Gist](https://gist.github.com/twe4ked/1432554), a mixin for retina backgrounds which aren't in a sprite.
 Big thanks to [Adam Brodzinksi](https://github.com/AdamBrodzinski), [thulstrup](https://github.com/thulstrup), [rstacruz](https://github.com/rstacruz) and [twe4ked](https://github.com/twe4ked)!
 
@@ -24,7 +24,7 @@ Drop the contents of the `src` folder into your preferred location and `@import`
     // this imports all mixins at ones
     @import "vendor/retina";
 
-    // you could also just import retina-sprite or retina-background
+    // you could also just import retina, retina-sprite or retina-background
     @import "vendor/retina/retina";
     @import "vendor/retina/retina-sprite";
     @import "vendor/retina/retina-background";
@@ -97,7 +97,7 @@ If you need a custom solution where you want to wrap some code into a retina med
 
 * Both `retina-sprite` and `retina-background` use this mixin internally.
 * This mixin includes the IE8 support, so if you have set the variable `$retina-support-respondjs` it will be used here.  
-  All this does is wrap your code (or the other mixins code) inside the media query like this:
+  All this does is wrap your code (or the other mixins' code) inside the media query like this:
   
         html.mediaqueries & {
           // your code here
