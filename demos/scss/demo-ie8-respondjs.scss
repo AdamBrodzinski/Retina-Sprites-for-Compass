@@ -1,0 +1,61 @@
+
+// Importing demo styles, not required for the mixins
+@import "styles";
+
+
+// Import this once for all retina mixins
+@import "vendor/retina";
+
+// Optional: import all mixins separately as needed
+// @import "vendor/retina/retina";
+// @import "vendor/retina/background";
+// @import "vendor/retina/sprite";
+
+
+/* --- START SPRITES CONFIG  --- */
+
+// These should go in a separate file in an actual project
+
+// Optional:
+// Set this variable to `1` if you have to support IE8 and use RespondJS.
+// Note: this also requires Modernizr's check for 'css-mediaqueries'
+$retina-support-respondjs: 1; 
+
+// Optional:
+// Default spacing for all sprites is set to 2px,
+// use this variable if you want to change it.
+$retina-sprite-spacing: 10px;
+
+$retina-sprite-display: inline-block-legacy;
+
+// The first sprite is used as default,
+// so you don't have to pass the name to the `retina-sprite` mixin
+@include retina-sprite-add(icons, "sprites/icons/*.png", "sprites-retina/icons/*.png");
+@include retina-sprite-add(buttons, "sprites/buttons/*.png", "sprites-retina/buttons/*.png");
+
+/* --- END SPRITES CONFIG  --- */
+
+
+.icon-compass-logo {
+  @include retina-sprite(compass-logo);
+}
+
+.myHoverActiveButton {
+  @include retina-sprite(signIn, buttons, $hover: true, $active: true);
+}
+
+.myHoverButton {
+  @include retina-sprite(signIn, buttons, $hover: true);
+}
+
+.myActiveButton {
+  @include retina-sprite(signIn, buttons, $active: true);
+}
+
+.myBoringButton {
+  @include retina-sprite(signIn, buttons);
+}
+
+.myOtherButton {
+  @include retina-background(arrow-right, center right no-repeat);
+}
