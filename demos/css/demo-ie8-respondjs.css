@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 100px;
+  font-family: sans-serif;
+}
+
+h4 {
+  margin: 35px 0 10px 0;
+  color: #444;
+}
+
+a {
+  display: inline-block;
+  padding: 10px;
+  padding-right: 30px;
+}
+
+/**
+ * Wraps any styles in a retina media query.
+ */
+/**
+ * Wraps any styles in a retina media query.
+ */
+/**
+ * Option variable to define the spacing between images in the generated sprite
+ */
+                                                                    /**
+* A mixin to create retina sprites with hover & active states
+*
+* You have to register a pair of sprites using `{@link #retina-sprite-add}` and then you can use this mixin:
+* 
+*     @include retina-sprite-add(icons, "icons/*.png", "icons-retina/*.png");
+*
+*     .my-icon {
+*       @include retina-sprite(icon-name, icons);
+*     }
+* 
+* @param {String} $name
+* @param {String} [$sprite-name]
+* @param {Boolean} [$hover=false]
+* @param {Boolean} [$active=false]
+*/
+/**
+ * @param {String} $name
+ * @param {String} $path
+ * @param {String} $path2x
+ */
+/**
+ * Wraps any styles in a retina media query.
+ */
+/**
+ * Mixin for retina backgrounds where you can't use a sprite.
+ * 
+ * - Make sure you have a file@2x.png file additional to your file.png.
+ * - The mixin prepends $imgPath, which should be set globally at some point. Default is: "img/"
+ *
+ * Examples:
+ *     li {
+ *       @include retina-background(arrow, no-repeat 10px 15px)
+ *     }
+ *     
+ *     a.external {
+ *       @include retina-background(external, no-repeat right)
+ *     }
+ * 
+ * @param {String} $file Path to file relative to images folder defined in config.rb and without a file extension
+ * @param {Object} [$attr] Additional attributes like position or repetition. E.g. `no-repeat top right`
+ * @param {String} [$type] The file type.
+ */
+/* --- START SPRITES CONFIG  --- */
+/* --- END SPRITES CONFIG  --- */
+.icon-compass-logo {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background-image: url('../images/sprites/icons-sbf88ff093f.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  /**
+   * Option variable to turn on/off IE8 support.
+   *
+   * This requires Modernizr's test for `css-mediaqueries` and RespondJS
+   *
+   * Set to `1` to turn on support.
+   */
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  html.mediaqueries .icon-compass-logo {
+    background-image: url('../images/sprites-retina/icons-see7dcf7e04.png');
+    background-position: 0 0;
+    -webkit-background-size: 30px auto;
+    -moz-background-size: 30px auto;
+    -o-background-size: 30px auto;
+    background-size: 30px auto;
+  }
+}
+
+.myHoverActiveButton {
+  display: inline-block;
+  height: 40px;
+  width: 174px;
+  background-image: url('../images/sprites/buttons-s15b9dc890f.png');
+  background-position: 0 -50px;
+  background-repeat: no-repeat;
+  /**
+   * Option variable to turn on/off IE8 support.
+   *
+   * This requires Modernizr's test for `css-mediaqueries` and RespondJS
+   *
+   * Set to `1` to turn on support.
+   */
+}
+.myHoverActiveButton:hover {
+  background-position: 0 -100px;
+}
+.myHoverActiveButton:active {
+  background-position: 0 0;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  html.mediaqueries .myHoverActiveButton {
+    background-image: url('../images/sprites-retina/buttons-s3b32d29de7.png');
+    background-position: 0 0;
+    -webkit-background-size: 174px auto;
+    -moz-background-size: 174px auto;
+    -o-background-size: 174px auto;
+    background-size: 174px auto;
+  }
+  html.mediaqueries .myHoverActiveButton:hover {
+    background-position: 0 -45px;
+  }
+  html.mediaqueries .myHoverActiveButton:active {
+    background-position: 0 -90px;
+  }
+}
+
+.myHoverButton {
+  display: inline-block;
+  height: 40px;
+  width: 174px;
+  background-image: url('../images/sprites/buttons-s15b9dc890f.png');
+  background-position: 0 -50px;
+  background-repeat: no-repeat;
+  /**
+   * Option variable to turn on/off IE8 support.
+   *
+   * This requires Modernizr's test for `css-mediaqueries` and RespondJS
+   *
+   * Set to `1` to turn on support.
+   */
+}
+.myHoverButton:hover {
+  background-position: 0 -100px;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  html.mediaqueries .myHoverButton {
+    background-image: url('../images/sprites-retina/buttons-s3b32d29de7.png');
+    background-position: 0 0;
+    -webkit-background-size: 174px auto;
+    -moz-background-size: 174px auto;
+    -o-background-size: 174px auto;
+    background-size: 174px auto;
+  }
+  html.mediaqueries .myHoverButton:hover {
+    background-position: 0 -45px;
+  }
+}
+
+.myActiveButton {
+  display: inline-block;
+  height: 40px;
+  width: 174px;
+  background-image: url('../images/sprites/buttons-s15b9dc890f.png');
+  background-position: 0 -50px;
+  background-repeat: no-repeat;
+  /**
+   * Option variable to turn on/off IE8 support.
+   *
+   * This requires Modernizr's test for `css-mediaqueries` and RespondJS
+   *
+   * Set to `1` to turn on support.
+   */
+}
+.myActiveButton:active {
+  background-position: 0 0;
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  html.mediaqueries .myActiveButton {
+    background-image: url('../images/sprites-retina/buttons-s3b32d29de7.png');
+    background-position: 0 0;
+    -webkit-background-size: 174px auto;
+    -moz-background-size: 174px auto;
+    -o-background-size: 174px auto;
+    background-size: 174px auto;
+  }
+  html.mediaqueries .myActiveButton:active {
+    background-position: 0 -90px;
+  }
+}
+
+.myBoringButton {
+  display: inline-block;
+  height: 40px;
+  width: 174px;
+  background-image: url('../images/sprites/buttons-s15b9dc890f.png');
+  background-position: 0 -50px;
+  background-repeat: no-repeat;
+  /**
+   * Option variable to turn on/off IE8 support.
+   *
+   * This requires Modernizr's test for `css-mediaqueries` and RespondJS
+   *
+   * Set to `1` to turn on support.
+   */
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  html.mediaqueries .myBoringButton {
+    background-image: url('../images/sprites-retina/buttons-s3b32d29de7.png');
+    background-position: 0 0;
+    -webkit-background-size: 174px auto;
+    -moz-background-size: 174px auto;
+    -o-background-size: 174px auto;
+    background-size: 174px auto;
+  }
+}
+
+.myOtherButton {
+  background: center right no-repeat;
+  background-image: url('../images/arrow-right.png?1374982508');
+  /**
+   * Option variable to turn on/off IE8 support.
+   *
+   * This requires Modernizr's test for `css-mediaqueries` and RespondJS
+   *
+   * Set to `1` to turn on support.
+   */
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+  html.mediaqueries .myOtherButton {
+    background-image: url('../images/arrow-right@2x.png?1374982517');
+    background-size: 30px 30px;
+  }
+}

@@ -4,6 +4,10 @@
 
 @import "retina";
 
+/**
+ * Option variable to define the spacing between images in the generated sprite
+ */
+$retina-sprite-spacing: 2px !default;
 
 $retina-sprite-names     : 0;
 $retina-sprite-sprites   : 0;
@@ -53,8 +57,6 @@ $retina-sprite-urls2x    : 0;
  * @param {String} $path2x
  */
 @mixin retina-sprite-add($name, $path, $path2x) {
-  $retina-sprite-spacing: 2px !default;
-
   $sprite   : sprite-map($path, $spacing: $retina-sprite-spacing);
   $sprite2x : sprite-map($path2x, $spacing: $retina-sprite-spacing);
 
@@ -78,8 +80,8 @@ $retina-sprite-urls2x    : 0;
 //    if `pad` is non-zero, then that's how much padding the element will have (requires
 //    $spacing on the sprite maps). Great for iPhone interfaces to make hit areas bigger.
 //
-@mixin _retina-sprite($name, $sprite, $sprite-url, $sprite2x, $sprite-url2x, $hover, $active, $dimensions: true, $pad: 0) {  
-  @include inline-block;
+@mixin _retina-sprite($name, $sprite, $sprite-url, $sprite2x, $sprite-url2x, $hover, $active, $dimensions: true, $pad: 0) {
+  display: inline-block;
   
   @if $dimensions == true {
     @include sprite-dimensions($sprite, $name);

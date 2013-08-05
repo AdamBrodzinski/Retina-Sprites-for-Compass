@@ -15,19 +15,21 @@ Big thanks to [Adam Brodzinksi](https://github.com/AdamBrodzinski), [thulstrup](
 * Use Retina Backgrounds without a Sprite
 * Wrap any styles in a Retina media query
 
-I've provided a demo folder with working sample buttons.
+There is a `demos` folder with working sample buttons. It includes a separate demo for the optional IE8 support.
 
 ## Instructions
 
-Drop the contents of the `src` folder into your preferred location and `@import` the ones you need into your main CSS file. I usually have a `vendor` folder for helpers like these.
+Drop the contents of the `src` folder into your preferred location and `@import` the ones you need into your main CSS file. It is useful to have a `vendor` folder for helpers like these, especially to separate them from project specific/your own mixins.
 
-    // this imports all mixins at ones
+This imports all mixins at once:
+
     @import "vendor/retina";
 
-    // you could also just import retina, retina-sprite or retina-background
+You can also import the mixins separately:
+
     @import "vendor/retina/retina";
-    @import "vendor/retina/retina-sprite";
-    @import "vendor/retina/retina-background";
+    @import "vendor/retina/sprite";
+    @import "vendor/retina/background";
 
 ### Retina Sprite mixin
 <br>
@@ -55,17 +57,18 @@ Now you can use the `retina-sprite` mixin:
 
 **Note:** The first declared pair of sprites is used as default, so you don't have to pass that name as parameter.
 
-#### Spacing
+#### Option: Spacing
 
-I recommend using spacing in the generated sprite, i've set a default value of 2px,
-if you want to change that you can override the option variable `$retina-sprite-spacing`:
+It is recommended to use spacing in the generated sprites to avoid clipping.  
+The default value is set to `2px`,
+if you want to change that value you can override the option variable `$retina-sprite-spacing`:
 
     $retina-sprite-spacing: 10px;
     
     @include retina-sprite-add(icons, "sprites/icons/*.png", "sprites-retina/icons/*.png");
     @include retina-sprite-add(buttons, "sprites/buttons/*.png", "sprites-retina/buttons/*.png");
 
-#### IE8 with RespondJS
+#### Option: IE8 with RespondJS
 
 If you need to support IE8 and use RespondJS you have to include [Modernizr](http://modernizr.com/download/#-mq-cssclasses-teststyles-css_mediaqueries)
 with a check for `css-mediaqueries` and override the option variable `$retina-support-respondjs`:
