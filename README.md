@@ -1,7 +1,12 @@
-# Retina-Sprites-for-Compass
-==========================
+## Retina Sprites for Compass
+### A mixin to create retina sprites with hover & active states
 
-## A mixin to create retina sprites with hover & active states
+
+**  
+*Note, we're currently working on releasing a better version, checkout the 2.0 branch for an expermental release*  
+**
+
+
 
 While building [Tagit's website](http://playtagit.com), I came across the need to use compass sprites with hover states on normal and retina devices. Not being able to find anything that would suite my needs, I forked a gist from [this Gist](https://gist.github.com/2140082) and added hover & active parameters. Big thanks to [thulstrup](https://github.com/thulstrup) and  [rstacruz](https://github.com/rstacruz)!
 
