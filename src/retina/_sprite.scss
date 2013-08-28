@@ -69,9 +69,24 @@ $retina-sprite-urls2x    : 0;
   $retina-sprite-urls2x    : append($retina-sprite-urls2x, sprite-url($sprite2x));
 }
 
-@mixin _retina-sprite-bg-pos($sprite, $name, $pad, $multiplier: 1) {
-  $pos: sprite-position($sprite, $name, -$pad * $multiplier, -$pad * $multiplier);
-  background-position: nth($pos, 1) nth($pos, 2) / $multiplier;
+
+@mixin _retina-child($child) {
+  @if $child == null {
+    @content;
+  }
+  @else {
+    #{$child} {
+      @content;
+    }
+  }
+}
+
+
+@mixin _retina-sprite-bg-pos($sprite, $name, $pad, $child, $multiplier: 1) {
+  @include _retina-child($child) {
+    $pos: sprite-position($sprite, $name, -$pad * $multiplier, -$pad * $multiplier);
+    background-position: nth($pos, 1) nth($pos, 2) / $multiplier;
+  }
 }
 
 
@@ -85,43 +100,45 @@ $retina-sprite-urls2x    : 0;
 //    if `pad` is non-zero, then that's how much padding the element will have (requires
 //    $spacing on the sprite maps). Great for iPhone interfaces to make hit areas bigger.
 //
-@mixin _retina-sprite($name, $sprite, $sprite-url, $sprite2x, $sprite-url2x, $hover, $active, $dimensions: true, $pad: 0) {
-  display: inline-block;
+@mixin _retina-sprite($name, $sprite, $sprite-url, $sprite2x, $sprite-url2x, $hover, $active, $dimensions: true, $pad: 0, $child: null) {
+  @include _retina-child($child) {
+    display: inline-block;
+    
+    background-image: $sprite-url;
+    @include _retina-sprite-bg-pos($sprite, $name, $pad, null);
+
+    background-repeat: no-repeat;
+
+    @if $dimensions == true {
+      @include sprite-dimensions($sprite, $name);
+    }
   
-  background-image: $sprite-url;
-  @include _retina-sprite-bg-pos($sprite, $name, $pad);
-
-  background-repeat: no-repeat;
-
-  @if $dimensions == true {
-    @include sprite-dimensions($sprite, $name);
+    @if $pad > 0 {
+      padding: $pad;
+    }
   }
-
   @if $hover == true {
-    &:hover  { @include _retina-sprite-bg-pos($sprite, $name + _hover, $pad); }
+    &:hover  { @include _retina-sprite-bg-pos($sprite, $name + _hover, $pad, $child); }
   }
   @if $active == true {
-    &:active { @include _retina-sprite-bg-pos($sprite, $name + _active, $pad); }
-  }
-  
-  @if $pad > 0 {
-    padding: $pad;
+    &:active { @include _retina-sprite-bg-pos($sprite, $name + _active, $pad, $child); }
   }
   
   @include retina {
-    background-image: $sprite-url2x;
-    @include background-size(ceil(image-width(sprite-path($sprite2x)) / 2) auto);
-    //  sprite-path() returns the path of the generated sprite sheet, which
-    //  image-width() calculates the width of. the ceil() is in place in case
-    //  you have sprites that have an odd-number of pixels in width
+    @include _retina-child($child) {
+      background-image: $sprite-url2x;
+      @include background-size(ceil(image-width(sprite-path($sprite2x)) / 2) auto);
+      //  sprite-path() returns the path of the generated sprite sheet, which
+      //  image-width() calculates the width of. the ceil() is in place in case
+      //  you have sprites that have an odd-number of pixels in width
 
-    @include _retina-sprite-bg-pos($sprite, $name, $pad, 2);
-    
+      @include _retina-sprite-bg-pos($sprite, $name, $pad, null, 2);
+    }
     @if $hover == true {
-      &:hover  { @include _retina-sprite-bg-pos($sprite, $name + _hover, $pad, 2); }
+      &:hover  { @include _retina-sprite-bg-pos($sprite, $name + _hover, $pad, $child, 2); }
     }
     @if $active == true {
-      &:active { @include _retina-sprite-bg-pos($sprite, $name + _active, $pad, 2); }
+      &:active { @include _retina-sprite-bg-pos($sprite, $name + _active, $pad, $child, 2); }
     }
   }
 }
