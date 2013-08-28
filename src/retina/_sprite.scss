@@ -69,6 +69,11 @@ $retina-sprite-urls2x    : 0;
   $retina-sprite-urls2x    : append($retina-sprite-urls2x, sprite-url($sprite2x));
 }
 
+@mixin _retina-sprite-bg-pos($sprite, $name, $pad, $multiplier: 1) {
+  $pos: sprite-position($sprite, $name, -$pad * $multiplier, -$pad * $multiplier);
+  background-position: nth($pos, 1) nth($pos, 2) / $multiplier;
+}
+
 
 // The general purpose retina sprite mixin.
 //
@@ -83,24 +88,20 @@ $retina-sprite-urls2x    : 0;
 @mixin _retina-sprite($name, $sprite, $sprite-url, $sprite2x, $sprite-url2x, $hover, $active, $dimensions: true, $pad: 0) {
   display: inline-block;
   
+  background-image: $sprite-url;
+  @include _retina-sprite-bg-pos($sprite, $name, $pad);
+
+  background-repeat: no-repeat;
+
   @if $dimensions == true {
     @include sprite-dimensions($sprite, $name);
   }
-  background-image: $sprite-url;
-  background-position: sprite-position($sprite, $name, -$pad, -$pad);
-  background-repeat: no-repeat;
 
   @if $hover == true {
-    $name_hover: $name + _hover;
-    &:hover {
-      background-position: sprite-position($sprite, $name_hover, -$pad, -$pad);
-    }
+    &:hover  { @include _retina-sprite-bg-pos($sprite, $name + _hover, $pad); }
   }
   @if $active == true {
-    $name_active: $name + _active;
-    &:active {
-      background-position: sprite-position($sprite, $name_active, -$pad, -$pad);
-    }
+    &:active { @include _retina-sprite-bg-pos($sprite, $name + _active, $pad); }
   }
   
   @if $pad > 0 {
@@ -108,27 +109,19 @@ $retina-sprite-urls2x    : 0;
   }
   
   @include retina {
-    $pos: sprite-position($sprite2x, $name, -$pad * 2, -$pad * 2);
     background-image: $sprite-url2x;
-    background-position: nth($pos, 1) nth($pos, 2) / 2;
     @include background-size(ceil(image-width(sprite-path($sprite2x)) / 2) auto);
     //  sprite-path() returns the path of the generated sprite sheet, which
     //  image-width() calculates the width of. the ceil() is in place in case
     //  you have sprites that have an odd-number of pixels in width
+
+    @include _retina-sprite-bg-pos($sprite, $name, $pad, 2);
     
     @if $hover == true {
-      $name_hover: $name + _hover;    // create myButton_hover and assign it
-      &:hover{
-        $pos: sprite-position($sprite2x, $name_hover, -$pad * 2, -$pad * 2);
-        background-position: nth($pos, 1) nth($pos, 2) / 2;
-      }
+      &:hover  { @include _retina-sprite-bg-pos($sprite, $name + _hover, $pad, 2); }
     }
     @if $active == true {
-      $name_active: $name + _active;    // create myButton_active and assign it
-      &:active{
-        $pos: sprite-position($sprite2x, $name_active, -$pad * 2, -$pad * 2);
-        background-position: nth($pos, 1) nth($pos, 2) / 2;
-      }
+      &:active { @include _retina-sprite-bg-pos($sprite, $name + _active, $pad, 2); }
     }
   }
 }

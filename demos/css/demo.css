@@ -78,11 +78,11 @@ a {
 /* --- END SPRITES CONFIG  --- */
 .icon-compass-logo {
   display: inline-block;
-  height: 30px;
-  width: 30px;
   background-image: url('../images/sprites/icons-sbf88ff093f.png');
   background-position: 0 0;
   background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
   /**
    * Option variable to turn on/off IE8 support.
    *
@@ -94,21 +94,21 @@ a {
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   .icon-compass-logo {
     background-image: url('../images/sprites-retina/icons-see7dcf7e04.png');
-    background-position: 0 0;
     -webkit-background-size: 30px auto;
     -moz-background-size: 30px auto;
     -o-background-size: 30px auto;
     background-size: 30px auto;
+    background-position: 0 0;
   }
 }
 
 .myHoverActiveButton {
   display: inline-block;
-  height: 40px;
-  width: 174px;
   background-image: url('../images/sprites/buttons-s15b9dc890f.png');
   background-position: 0 -50px;
   background-repeat: no-repeat;
+  height: 40px;
+  width: 174px;
   /**
    * Option variable to turn on/off IE8 support.
    *
@@ -126,27 +126,27 @@ a {
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   .myHoverActiveButton {
     background-image: url('../images/sprites-retina/buttons-s3b32d29de7.png');
-    background-position: 0 0;
     -webkit-background-size: 174px auto;
     -moz-background-size: 174px auto;
     -o-background-size: 174px auto;
     background-size: 174px auto;
+    background-position: 0 -25px;
   }
   .myHoverActiveButton:hover {
-    background-position: 0 -45px;
+    background-position: 0 -50px;
   }
   .myHoverActiveButton:active {
-    background-position: 0 -90px;
+    background-position: 0 0;
   }
 }
 
 .myHoverButton {
   display: inline-block;
-  height: 40px;
-  width: 174px;
   background-image: url('../images/sprites/buttons-s15b9dc890f.png');
   background-position: 0 -50px;
   background-repeat: no-repeat;
+  height: 40px;
+  width: 174px;
   /**
    * Option variable to turn on/off IE8 support.
    *
@@ -161,24 +161,24 @@ a {
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   .myHoverButton {
     background-image: url('../images/sprites-retina/buttons-s3b32d29de7.png');
-    background-position: 0 0;
     -webkit-background-size: 174px auto;
     -moz-background-size: 174px auto;
     -o-background-size: 174px auto;
     background-size: 174px auto;
+    background-position: 0 -25px;
   }
   .myHoverButton:hover {
-    background-position: 0 -45px;
+    background-position: 0 -50px;
   }
 }
 
 .myActiveButton {
   display: inline-block;
-  height: 40px;
-  width: 174px;
   background-image: url('../images/sprites/buttons-s15b9dc890f.png');
   background-position: 0 -50px;
   background-repeat: no-repeat;
+  height: 40px;
+  width: 174px;
   /**
    * Option variable to turn on/off IE8 support.
    *
@@ -193,24 +193,24 @@ a {
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   .myActiveButton {
     background-image: url('../images/sprites-retina/buttons-s3b32d29de7.png');
-    background-position: 0 0;
     -webkit-background-size: 174px auto;
     -moz-background-size: 174px auto;
     -o-background-size: 174px auto;
     background-size: 174px auto;
+    background-position: 0 -25px;
   }
   .myActiveButton:active {
-    background-position: 0 -90px;
+    background-position: 0 0;
   }
 }
 
 .myBoringButton {
   display: inline-block;
-  height: 40px;
-  width: 174px;
   background-image: url('../images/sprites/buttons-s15b9dc890f.png');
   background-position: 0 -50px;
   background-repeat: no-repeat;
+  height: 40px;
+  width: 174px;
   /**
    * Option variable to turn on/off IE8 support.
    *
@@ -222,17 +222,17 @@ a {
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   .myBoringButton {
     background-image: url('../images/sprites-retina/buttons-s3b32d29de7.png');
-    background-position: 0 0;
     -webkit-background-size: 174px auto;
     -moz-background-size: 174px auto;
     -o-background-size: 174px auto;
     background-size: 174px auto;
+    background-position: 0 -25px;
   }
 }
 
 .myOtherButton {
   background: center right no-repeat;
-  background-image: url('../images/arrow-right.png?1374982508');
+  background-image: url('../images/arrow-right.png?1377667507');
   /**
    * Option variable to turn on/off IE8 support.
    *
@@ -243,7 +243,7 @@ a {
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
   .myOtherButton {
-    background-image: url('../images/arrow-right@2x.png?1374982517');
+    background-image: url('../images/arrow-right@2x.png?1377667507');
     background-size: 30px 30px;
   }
 }
