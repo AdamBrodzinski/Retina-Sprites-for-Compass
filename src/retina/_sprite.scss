@@ -58,7 +58,7 @@ $retina-sprite-urls2x    : 0;
  */
 @mixin retina-sprite-add($name, $path, $path2x) {
   $sprite   : sprite-map($path, $spacing: $retina-sprite-spacing);
-  $sprite2x : sprite-map($path2x, $spacing: $retina-sprite-spacing);
+  $sprite2x : sprite-map($path2x, $spacing: $retina-sprite-spacing * 2);
 
   $retina-sprite-names     : append($retina-sprite-names, $name);
 
@@ -115,13 +115,13 @@ $retina-sprite-urls2x    : 0;
     //  image-width() calculates the width of. the ceil() is in place in case
     //  you have sprites that have an odd-number of pixels in width
 
-    @include _retina-sprite-bg-pos($sprite, $name, $pad, 2);
+    @include _retina-sprite-bg-pos($sprite2x, $name, $pad, 2);
     
     @if $hover == true {
-      &:hover  { @include _retina-sprite-bg-pos($sprite, $name + _hover, $pad, 2); }
+      &:hover  { @include _retina-sprite-bg-pos($sprite2x, $name + _hover, $pad, 2); }
     }
     @if $active == true {
-      &:active { @include _retina-sprite-bg-pos($sprite, $name + _active, $pad, 2); }
+      &:active { @include _retina-sprite-bg-pos($sprite2x, $name + _active, $pad, 2); }
     }
   }
 }
