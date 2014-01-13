@@ -8,7 +8,7 @@
 
 
 
-While building [Tagit's website](http://playtagit.com), I came across the need to use compass sprites with hover states on normal and retina devices. Not being able to find anything that would suite my needs, I forked a gist from [this Gist](https://gist.github.com/2140082) and added hover & active parameters. Big thanks to [thulstrup](https://github.com/thulstrup) and  [rstacruz](https://github.com/rstacruz)!
+While building Tagit's website, I came across the need to use compass sprites with hover states on normal and retina devices. Not being able to find anything that would suite my needs, I forked a gist from [this Gist](https://gist.github.com/2140082) and added hover & active parameters. Big thanks to [thulstrup](https://github.com/thulstrup) and  [rstacruz](https://github.com/rstacruz)!
 
 I created a drop in utility mixin to allow compass to automatically create sprites for normal and retina devices, and also providing hover and active states.
 
