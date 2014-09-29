@@ -60,13 +60,23 @@ $retina-sprite-urls2x    : 0;
   $sprite   : sprite-map($path, $spacing: $retina-sprite-spacing);
   $sprite2x : sprite-map($path2x, $spacing: $retina-sprite-spacing * 2);
 
-  $retina-sprite-names     : append($retina-sprite-names, $name);
+  @if (feature-exists(global-variable-shadowing)) {
+    $retina-sprite-names     : append($retina-sprite-names, $name) !global;
 
-  $retina-sprite-sprites   : append($retina-sprite-sprites, $sprite);
-  $retina-sprite-urls      : append($retina-sprite-urls, sprite-url($sprite));
+    $retina-sprite-sprites   : append($retina-sprite-sprites, $sprite) !global;
+    $retina-sprite-urls      : append($retina-sprite-urls, sprite-url($sprite)) !global;
 
-  $retina-sprite-sprites2x : append($retina-sprite-sprites2x, $sprite2x);
-  $retina-sprite-urls2x    : append($retina-sprite-urls2x, sprite-url($sprite2x));
+    $retina-sprite-sprites2x : append($retina-sprite-sprites2x, $sprite2x) !global;
+    $retina-sprite-urls2x    : append($retina-sprite-urls2x, sprite-url($sprite2x)) !global;
+  } @else {
+    $retina-sprite-names     : append($retina-sprite-names, $name);
+
+    $retina-sprite-sprites   : append($retina-sprite-sprites, $sprite);
+    $retina-sprite-urls      : append($retina-sprite-urls, sprite-url($sprite));
+
+    $retina-sprite-sprites2x : append($retina-sprite-sprites2x, $sprite2x);
+    $retina-sprite-urls2x    : append($retina-sprite-urls2x, sprite-url($sprite2x));
+  }
 }
 
 @mixin _retina-sprite-bg-pos($sprite, $name, $pad, $multiplier: 1) {
