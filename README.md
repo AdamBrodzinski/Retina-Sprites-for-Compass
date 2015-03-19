@@ -4,7 +4,7 @@
 
 **  
 *Note, we're currently working on releasing a better version, checkout the 2.0 branch for an expermental release*  
-Also Pivotal Tracker has a [nice looking fork](https://github.com/pivotaltracker/Retina-Sprites-for-Compass) that will be maintained more than this repo
+Also Pivotal Tracker has a [nice looking fork](https://github.com/pivotaltracker/Retina-Sprites-for-Compass) that will be maintained more than this repo  
 **
 
 
