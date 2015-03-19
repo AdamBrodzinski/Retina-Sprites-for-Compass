@@ -4,6 +4,7 @@
 
 **  
 *Note, we're currently working on releasing a better version, checkout the 2.0 branch for an expermental release*  
+Also Pivotal Tracker has a [nice looking fork](https://github.com/pivotaltracker/Retina-Sprites-for-Compass) that will be maintained more than this repo
 **
 
 
@@ -53,4 +54,4 @@ Almost ready to rock and roll!! Create a class for your sprite, and use an inclu
        @include retina-sprite(signIn);                                  // imports signIn.png
     }
 
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/9c03052a2c62c8153c13242efe0f6d2a "githalytics.com")](http://githalytics.com/AdamBrodzinski/Retina-Sprites-for-Compass)
+
