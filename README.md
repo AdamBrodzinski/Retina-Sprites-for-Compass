@@ -1,12 +1,13 @@
 ## Retina Sprites for Compass
-### A mixin to create retina sprites with hover & active states
 
 
-**  
-*Note, we're currently working on releasing a better version, checkout the 2.0 branch for an expermental release*  
-Also Pivotal Tracker has a [nice looking fork](https://github.com/pivotaltracker/Retina-Sprites-for-Compass) that will be maintained more than this repo  
-**
+## Notice - Depricated
 
+I'm no longer actively using sprites in my projects so i'm not going to be maintaining this any longer. Pivital Tracker has a nice fork that is faster and more current. I would reccomend using this going forward!
+
+### [pivotaltracker/Retina-Sprites-for-Compass](https://github.com/pivotaltracker/Retina-Sprites-for-Compass)
+
+<br><br><br><hr><br><br><br>
 
 
 While building Tagit's website, I came across the need to use compass sprites with hover states on normal and retina devices. Not being able to find anything that would suite my needs, I forked a gist from [this Gist](https://gist.github.com/2140082) and added hover & active parameters. Big thanks to [thulstrup](https://github.com/thulstrup) and  [rstacruz](https://github.com/rstacruz)!
