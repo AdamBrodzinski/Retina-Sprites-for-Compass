@@ -3,7 +3,7 @@
 
 ## Notice - Depricated
 
-I'm no longer actively using sprites in my projects so i'm not going to be maintaining this any longer. Pivital Tracker has a nice fork that is faster and more current. I would reccomend using this going forward!
+I'm no longer actively using sprites in my projects so i'm not going to be maintaining this any longer. Pivital Tracker has a nice fork that is faster and more current. I would recommend using this going forward!
 
 ### [pivotaltracker/Retina-Sprites-for-Compass](https://github.com/pivotaltracker/Retina-Sprites-for-Compass)
 
